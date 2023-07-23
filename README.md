@@ -13,6 +13,7 @@ Our _printf function supports the following conversion specifiers:
 - %c: Prints a single character.
 - %s: Prints a string of characters.
 - %%: Prints a single percent sign.
+
 Apart from the above conversion specifiers, we have kept this implementation relatively simple, and we do not handle field width, precision, flag characters, or length modifiers as found in the standard printf function of the C library. This decision has been made to focus on the core functionality and to make the project more approachable for learners.
 ## Badges
 
