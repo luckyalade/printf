@@ -1,7 +1,7 @@
 
 # ALX Printf Project 
 
-Welcome to the Printf project! This is a custom implementation of the printf function in the C programming language. The printf function is commonly used to display formatted output to the standard output stream in C programs. In this project, we have created our version of this function, named _printf, which follows similar behavior and functionality as the standard printf.
+Welcome to the ALX Printf Project! This is a custom implementation of the printf function in the C programming language. The printf function is commonly used to display formatted output to the standard output stream in C programs. In this project, we have created our version of this function, named _printf, which follows similar behavior and functionality as the standard printf.
 
 
 ## Project Overview
