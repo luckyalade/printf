@@ -28,7 +28,7 @@ void printstring(va_list a)
 	char *str = va_arg(a, char *);
 
 	if (str == NULL)
-		str = "(null)";
+	str = "(null)";
 
 	while (*str)
 	{
