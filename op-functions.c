@@ -35,6 +35,7 @@ void printstring(va_list a)
 		_putchar('l');
 		_putchar('l');
 		_putchar(')');
+		return;
 	}
 	else if (*str == '\0')
 	{
@@ -45,6 +46,7 @@ void printstring(va_list a)
 		_putchar('t');
 		_putchar('y');
 		_putchar(')');
+		return;
 	}
 	else
 	{
