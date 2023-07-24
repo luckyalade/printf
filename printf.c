@@ -14,6 +14,8 @@ int _printf(const char *format, ...)
 	printer ops[] =	{
 		{"c", printchar},
 		{"s", printstring},
+		{"d", printf_int},
+		{"i", printf_dec},
 		{NULL, NULL}
 	};
 	int i = 0, j, count = 0;
