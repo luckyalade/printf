@@ -50,6 +50,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
+			j = 0;
 			while (ops[j].f != NULL)
 			{
 				if (format[i] == *(ops[j].s))
@@ -60,8 +61,8 @@ int _printf(const char *format, ...)
 				}
 				j++;
 			}
-			i++;
 		}
+		i++;
 	}
 	va_end(args);
 	return (count);
