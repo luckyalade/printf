@@ -28,12 +28,31 @@ void printstring(va_list a)
 	char *str = va_arg(a, char *);
 
 	if (str == NULL)
-	str = "(null)";
-
-	while (*str)
 	{
-		_putchar(*str);
-		str++;
+		_putchar('(');
+		_putchar('n');
+		_putchar('u');
+		_putchar('l');
+		_putchar('l');
+		_putchar(')');
+	}
+	else if (*str == '\0')
+	{
+		_putchar('(');
+		_putchar('e');
+		_putchar('m');
+		_putchar('p');
+		_putchar('t');
+		_putchar('y');
+		_putchar(')');
+	}
+	else
+	{
+		while (*str)
+		{
+			_putchar(*str);
+			str++;
 
+		}
 	}
 }
