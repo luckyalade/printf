@@ -2,6 +2,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
+int _printf(const char *format, ...);
 /**
  * _printf - a function that produces output according to a format
  * @format: output specifier
@@ -12,12 +13,8 @@
 int _printf(const char *format, ...)
 {
 	printer ops[] =	{
-		{"c", printchar},
-		{"s", printstring},
-		{"d", printf_int},
-		{"i", printf_dec},
-		{NULL, NULL}
-	};
+		{"c", printchar}, {"s", printstring}, {"d", printf_int},
+		{"i", printf_dec}, {NULL, NULL}};
 	int i = 0, j, count = 0;
 	va_list args;
 
@@ -30,6 +27,11 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
+			if (format[i] == '%')
+			{
+				_putchar(format[i]);
+				count++;
+			}
 			j = 0;
 			while (ops[j].f != NULL)
 			{
