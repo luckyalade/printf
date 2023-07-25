@@ -40,17 +40,19 @@ int _printf(const char *format, ...)
 				_putchar(format[i]);
 				count++;
 			}
-
-			j = 0;
-			while (ops[j].f != NULL)
+			else if (format[i] != '\0')
 			{
-				if (format[i] == *(ops[j].s))
+				j = 0;
+				while (ops[j].f != NULL)
 				{
-					ops[j].f(args);
-					count++;
-					break;
+					if (format[i] == *(ops[j].s))
+					{
+						ops[j].f(args);
+						count++;
+						break;
+					}
+					j++;
 				}
-				j++;
 			}
 		}
 		else if (format[i] != '\0')
