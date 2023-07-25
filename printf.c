@@ -33,6 +33,10 @@ int _printf(const char *format, ...)
 				_putchar(format[i]);
 				count++;
 			}
+			else if (format[i] =='\0')
+			{
+				return (-1);
+			}
 			else if (format[i] != '\0')
 			{
 				unknownSpecifier = 1;
