@@ -24,32 +24,14 @@ int _printf(const char *format, ...)
 
 	while (format != NULL && format[i])
 	{
-		if (format[i] != '%')
+		if (format[i] == '%')
 		{
-			_putchar(format[i]);
-			count++;
-		}
-		else if (format[i + 1] == '%')
-		{
-			_putchar('%');
-			count++;
 			i++;
-		}
-		else if (format[i + 1] != 'c' && format[i + 1] != 's'
-				&& format[i + 1] != 'i' && format[i + 1] != 'd'
-				&& format[i + 1] != 'R' && format[i + 1] != 'r')
-		{
-
-			_putchar('%');
-			count++;
-
-			_putchar(format[i + 1]);
-			count++;
-			i++;
-
-		}
-		else
-		{
+			if (format[i] == '%')
+			{
+				_putchar(format[i]);
+				count++;
+			}
 			j = 0;
 			while (ops[j].f != NULL)
 			{
@@ -61,6 +43,11 @@ int _printf(const char *format, ...)
 				}
 				j++;
 			}
+		}
+		else
+		{
+			_putchar(format[i]);
+			count++;
 		}
 		i++;
 	}
