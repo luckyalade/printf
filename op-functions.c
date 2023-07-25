@@ -11,7 +11,7 @@
 
 void printchar(va_list a)
 {
-	int ch = va_arg(a, int);
+	char ch = va_arg(a, int);
 
 	_putchar(ch);
 }
@@ -41,6 +41,7 @@ void printstring(va_list a)
 	{
 		_putchar('(');
 		_putchar('e');
+
 		_putchar('m');
 		_putchar('p');
 		_putchar('t');
