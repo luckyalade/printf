@@ -2,13 +2,13 @@
 /**
  * handle_print - Prints an argument depending on its type
  * @fmt: Formatted strings that print the various arguments.
- * @list: Listed arguments to be printed.
+ * @list: Listed all arguments fixed for print.
  * @ind: ind.
  * @buffer: Buffer array that handles print.
  * @flags: evaluates all the active flags
- * @width: get width.
+ * @width: get width specification.
  * @precision: Specification of precision functions
- * @size: The size specifier
+ * @size: size specifier function
  *
  * Return: 1 or 2;
  */
