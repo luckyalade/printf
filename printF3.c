@@ -56,13 +56,13 @@ int print_pointer(va_list types, char buffer[],
 /**
  * print_non_printable - this function prints out the ASCII codes in hexadecimal
  * in the non printable chars
- * @types: Lista of arguments
+ * @types: Arguments lists
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
- * @width: get width
+ * @width: get width - the width proportion
  * @precision: Precision specification
  * @size: Size specifier
- * Return: Number of chars printed
+ * Return: The Number of chars printed
  */
 int print_non_printable(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
