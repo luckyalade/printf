@@ -8,7 +8,6 @@ void printstring(va_list a);
 int _printf(const char *format, ...);
 int _putchar(char c);
 
-
 /**
  * struct op - struct for 2
  * @s: character to check
