@@ -32,15 +32,13 @@ int _printf(const char *format, ...)
 				_putchar(format[i]);
 				count++;
 			}
-			if (format[i] != 'c' && format[i] != 's'
-					&& format[i] != 'i' && format[i] != 'd'
-					&& format[i] != 'R' && format[i] != 'r')
+			if (format[i] != 'c' && format[i] != 's')
 			{
 
 				_putchar('%');
 				count++;
 
-				_putchar(format[i + 1]);
+				_putchar(format[i]);
 				count++;
 
 			}
