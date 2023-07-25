@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_flags - evaluates all active flags
+ * print_flags - evaluates all all active flags
  * @format: Formatted all strings that print the arguments
  * @i: acquires a parameter.
  *
