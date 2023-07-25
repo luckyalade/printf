@@ -46,13 +46,13 @@ int handle_write_char(char c, char buffer[],
 
 /************************* WRITE NUMBER *************************/
 /**
- * write_number - function that writes to a string
- * @is_negative: Lista of arguments
- * @ind: char types.
+ * write_number - function that writes into a string
+ * @is_negative: Lists of arguments
+ * @ind: char datatypes.
  * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags
- * @width: get width.
- * @precision: precision specifier
+ * @flags:  evalautes active flags
+ * @width: get width function
+ * @precision: precision specifier function
  * @size: Size specifier
  *
  * Return: Number of chars printed.
