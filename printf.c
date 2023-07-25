@@ -16,45 +16,53 @@ int _printf(const char *format, ...)
 		{"c", printchar}, {"s", printstring}, {"d", printf_int},
 		{"i", printf_dec}, {NULL, NULL}};
 	int i = 0, j, count = 0;
+	int unknownSpecifier;
 	va_list args;
 
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-	for (i = 0; format[i] != '\0'; i++)
+
+	while (format[i] != '\0')
 	{
-		if (format[i] != '%')
+		if (format[i] == '%')
 		{
-			count++;
-			_putchar(format[i]);
-		}
-		else if (format[i + 1] == '%')
-		{
-			count++;
-			_putchar('%');
 			i++;
-		}
-		else if (format[i + 1] != 'c' && format[i + 1] != 's'
-				&& format[i + 1] != 'i' && format[i + 1] != 'd'
-				&& format[i + 1] != 'R' && format[i + 1] != 'r')
-		{
-			count++;
-			_putchar('%');
-			count++;
-			_putchar(format[i + 1]);
-			i++;
-		}
-		else
-		{
-			for (j = 0; ops[j].s != NULL; j++)
-				if (format[i + 1] == *(ops[j].s))
+			if (format[i] == '%')
+			{
+				_putchar(format[i]);
+				count++;
+			}
+			else if (format[i] != '\0')
+			{
+				unknownSpecifier = 1;
+				for (j = 0; ops[j].s != NULL; j++)
 				{
-					count++;
-					ops[j].f(args);
+					if (format[i] == *(ops[j].s))
+					{
+						unknownSpecifier = 0;
+						ops[j].f(args);
+						count++;
+						break;
+					}
 				}
-			i++;
+				if (unknownSpecifier)
+				{
+					_putchar('%');
+					count++;
+					_putchar(format[i]);
+					count++;
+				}
+			}
 		}
+		else if (format[i] != '\0')
+		{
+			_putchar(format[i]);
+			count++;
+		}
+		i++;
 	}
+
 	va_end(args);
 	return (count);
 }
