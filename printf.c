@@ -53,7 +53,7 @@ int _printf(const char *format, ...)
 				j++;
 			}
 		}
-		else
+		else if (format[i] != '\0')
 		{
 			_putchar(format[i]);
 			count++;
