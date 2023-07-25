@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
-	while (format != NULL && format[i])
+	while (format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 				_putchar(format[i]);
 				count++;
 			}
-			if (format[i] != 'c' && format[i] != 's')
+			else if (format[i] != 'c' && format[i] != 's')
 			{
 
 				_putchar('%');
