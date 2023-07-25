@@ -7,8 +7,8 @@
  * @buffer: Buffer array that handles print.
  * @flags: evaluates all the active flags
  * @width: get width.
- * @precision: Precision specification
- * @size: Size specifier
+ * @precision: Specification of precision functions
+ * @size: The size specifier
  *
  * Return: 1 or 2;
  */
