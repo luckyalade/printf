@@ -3,9 +3,9 @@
 /************************* WRITE HANDLE *************************/
 /**
  * handle_write_char - function that prints a string
- * @c: char types.
+ * @c: char datatypes.
  * @buffer: Buffer array to handle print
- * @flags:  Calculates active flags.
+ * @flags:  evaluates active flags.
  * @width: get width.
  * @precision: precision specifier
  * @size: Size specifier
