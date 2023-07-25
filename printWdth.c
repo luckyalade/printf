@@ -139,7 +139,7 @@ int write_num(int ind, char buffer[],
 
 /**
  * write_unsigned - function that writes an unsigned number
- * @is_negative: Number indicating if the num is negative
+ * @is_negative: Number specifying whether the num is negative
  * @ind: Index at which the number starts in the buffer
  * @buffer: Array of chars
  * @flags: Flags specifiers function
