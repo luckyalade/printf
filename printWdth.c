@@ -138,14 +138,14 @@ int write_num(int ind, char buffer[],
 }
 
 /**
- * write_unsgnd - function that writes an unsigned number
+ * write_unsigned - function that writes an unsigned number
  * @is_negative: Number indicating if the num is negative
  * @ind: Index at which the number starts in the buffer
  * @buffer: Array of chars
- * @flags: Flags specifiers
- * @width: Width specifier
- * @precision: Precision specifier
- * @size: Size specifier
+ * @flags: Flags specifiers function
+ * @width: Width specifier function
+ * @precision: Precision specifier function
+ * @size: Size specifier function
  *
  * Return: Number of written chars.
  */
