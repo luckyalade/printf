@@ -16,6 +16,7 @@ int _printf(const char *format, ...)
 		{"c", printchar}, {"s", printstring}, {"d", printf_int},
 		{"i", printf_dec}, {NULL, NULL}};
 	int i = 0, j, count = 0;
+	int unknownSpecifier;
 	va_list args;
 
 	va_start(args, format);
@@ -32,26 +33,25 @@ int _printf(const char *format, ...)
 				_putchar(format[i]);
 				count++;
 			}
-			else if (format[i] != 'c' && format[i] != 's')
-			{
-
-				_putchar('%');
-				count++;
-				_putchar(format[i]);
-				count++;
-			}
 			else if (format[i] != '\0')
 			{
-				j = 0;
-				while (ops[j].f != NULL)
+				unknownSpecifier = 1;
+				for (j = 0; ops[j].s != NULL; j++)
 				{
 					if (format[i] == *(ops[j].s))
 					{
+						unknownSpecifier = 0;
 						ops[j].f(args);
 						count++;
 						break;
 					}
-					j++;
+				}
+				if (unknownSpecifier)
+				{
+					_putchar('%');
+					count++;
+					_putchar(format[i]);
+					count++;
 				}
 			}
 		}
