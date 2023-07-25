@@ -24,8 +24,10 @@ int _printf(const char *format, ...)
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
+		{
 			count++;
 			_putchar(format[i]);
+		}
 		else if (format[i + 1] == '%')
 		{
 			count++;
@@ -44,10 +46,12 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			for (j = 0; ops[j],s != NULL; j++)
-				if (format[i + 1] == *(ops[j].s)) 
+			for (j = 0; ops[j].s != NULL; j++)
+				if (format[i + 1] == *(ops[j].s))
+				{
 					count++;
 					ops[j].f(args);
+				}
 			i++;
 		}
 	}
