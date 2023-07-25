@@ -53,9 +53,9 @@ int handle_write_char(char c, char buffer[],
  * @flags:  evalautes active flags
  * @width: get width function
  * @precision: precision specifier function
- * @size: Size specifier
+ * @size: Size specifier function
  *
- * Return: Number of chars printed.
+ * Return: Number of printed chars.
  */
 int write_number(int is_negative, int ind, char buffer[],
 	int flags, int width, int precision, int size)
@@ -84,7 +84,7 @@ int write_number(int is_negative, int ind, char buffer[],
  * @buffer: Buffer
  * @flags: Flags
  * @width: width
- * @prec: Precision specifier
+ * @prec: Precision specifier function
  * @length: Number length
  * @padd: Pading char
  * @extra_c: Extra char
