@@ -21,8 +21,6 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
-		return (-1);
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
@@ -38,21 +36,21 @@ int _printf(const char *format, ...)
 				&& format[i + 1] != 'i' && format[i + 1] != 'd'
 				&& format[i + 1] != 'R' && format[i + 1] != 'r')
 		{
-			counter++;
+			count++;
 			_putchar('%');
-			counter++;
+			count++;
 			_putchar(format[i + 1]);
 			i++;
 		}
 		else
 		{
 			for (j = 0; ops[j],s != NULL; j++)
-				if (format[i + 1] == *(ops[j].s)
-					counter++;
+				if (format[i + 1] == *(ops[j].s)) 
+					count++;
 					ops[j].f(args);
 			i++;
 		}
 	}
-	va_end(ap);
-	return (counter);
+	va_end(args);
+	return (count);
 }
