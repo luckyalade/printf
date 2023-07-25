@@ -7,6 +7,9 @@ void printchar(va_list a);
 void printstring(va_list a);
 int _printf(const char *format, ...);
 int _putchar(char c);
+void printf_int(va_list args);
+void printf_dec(va_list args);
+
 
 /**
  * struct op - struct for 2

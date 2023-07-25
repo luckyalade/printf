@@ -11,7 +11,7 @@
 
 void printchar(va_list a)
 {
-	int ch = va_arg(a, int);
+	char ch = va_arg(a, int);
 
 	_putchar(ch);
 }
@@ -26,11 +26,15 @@ void printchar(va_list a)
 void printstring(va_list a)
 {
 	char *str = va_arg(a, char *);
+	int i = 0;
 
-	while (*str)
+	if (str == NULL)
+	str = "(null)";
+
+	while (str[i] != '\0')
 	{
-		_putchar(*str);
-		str++;
-
+		_putchar(str[i]);
+		i++;
 	}
+
 }
