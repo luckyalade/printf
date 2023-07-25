@@ -32,6 +32,19 @@ int _printf(const char *format, ...)
 				_putchar(format[i]);
 				count++;
 			}
+			if (format[i] != 'c' && format[i] != 's'
+					&& format[i] != 'i' && format[i] != 'd'
+					&& format[i] != 'R' && format[i] != 'r')
+			{
+
+				_putchar('%');
+				count++;
+
+				_putchar(format[i + 1]);
+				count++;
+
+			}
+
 			j = 0;
 			while (ops[j].f != NULL)
 			{
