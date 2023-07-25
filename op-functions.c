@@ -26,36 +26,15 @@ void printchar(va_list a)
 void printstring(va_list a)
 {
 	char *str = va_arg(a, char *);
+	int i = 0;
 
 	if (str == NULL)
-	{
-		_putchar('(');
-		_putchar('n');
-		_putchar('u');
-		_putchar('l');
-		_putchar('l');
-		_putchar(')');
-		return;
-	}
-	else if (*str == '\0')
-	{
-		_putchar('(');
-		_putchar('e');
+	str = "(null)";
 
-		_putchar('m');
-		_putchar('p');
-		_putchar('t');
-		_putchar('y');
-		_putchar(')');
-		return;
-	}
-	else
+	while (str[i] != '\0')
 	{
-		while (*str)
-		{
-			_putchar(*str);
-			str++;
-
-		}
+		_putchar(*str[i]);
+		i++;
 	}
+
 }
